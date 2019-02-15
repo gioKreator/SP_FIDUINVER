@@ -17,8 +17,8 @@ OBJETIVO              : PROCESA MOVIMIENTOS INVERSIONES BURSATILES
 CREADOR               : ADRIAN FLORES RODRIGUEZ
 FECHA CREACION        : 16-OCTUBRE-2017
 FECHA MODIFICACION    : 25-01-2017  AFR SE INICIALIZA LA VARIABLE DE FOLIO DE REPORTO
-FECHA MODIFICACION	  : 03-05-2018  CGI SE A¶ADE LOGICA PARA TRATAMIENTO DE OPERACIONES FUTURAS
-FECHA MODIFICACION	  : 06-07-2018  CGI SE A¶ADE LOGICA PARA TRATAMIENTO DE OPERACIONES DE RECLASIFICACION
+FECHA MODIFICACION    : 03-05-2018  CGI SE A¶ADE LOGICA PARA TRATAMIENTO DE OPERACIONES FUTURAS
+FECHA MODIFICACION    : 06-07-2018  CGI SE A¶ADE LOGICA PARA TRATAMIENTO DE OPERACIONES DE RECLASIFICACION
 OBJETIVO MODIFICACION : 
 ...........................................................................................*/
    P1:BEGIN --DECLARACIçN DE VARIABLES DE PROCESO
@@ -828,10 +828,10 @@ WHERE    CVE_NUM_CLAVE =- 5;--
                           substr(ope.upo_linea, 7, 10) AS DATE
                         ) = PF_CONTABLE
                    AND obb.cao_cpa_vta_nsf IN(
-                       'CD',
-                       'VD',
-                       'RE',
-                       'DE'
+                       'CD',                          ******************** COMPRA   ****************
+                       'VD',                          ******************** VENTA    ****************
+                       'RE',                          ******************** RETIRO   **************** O REPORTO
+                       'DE'                           ******************** DERECHOS ****************
                    )
                )
            )
@@ -2185,7 +2185,7 @@ OR VI_FOLIO_CONT = 0 THEN ROLLBACK WORK;--
        DAY(CURRENT_DATE),
        'ACTIVO'
    );--
-	*/
+  */
 
 --
  --
@@ -2200,7 +2200,7 @@ SET VS_ERROR = '106 ERROR EN CONTABILIZADOR ' || PS_MSGERR_OUT;--
 --
  --
 ELSE 
-	/*INSERT
+  /*INSERT
    INTO        GDB2PR.CLAVES
    VALUES(
        - 5,
@@ -2222,7 +2222,7 @@ ELSE
        DAY(CURRENT_DATE),
        'ACTIVO'
    );--
-	*/
+  */
 
 --
  --
@@ -3479,7 +3479,7 @@ WHERE    CD_OPER_CONT_CARGA IS NULL
 --
  --
 ELSE 
-	/*INSERT
+  /*INSERT
    INTO        GDB2PR.CLAVES
    VALUES(
        - 5,
@@ -3564,7 +3564,7 @@ ELSE
        DAY(CURRENT_DATE),
        'ACTIVO'
    );--
-	*/
+  */
 
 --
  --
