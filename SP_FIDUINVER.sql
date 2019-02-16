@@ -879,83 +879,83 @@ FROM        SESSION.PROC_NOCT;--
  --DEL UNIVERSO DE OPERACIONES INCLUIDO EN LA TABLA PROC_NOCT, SE TOMAN LAS OPERACIONES FUTURAS Y SE INSERTAN EN LA TABLA TFI259_OPE_FUT_IND
  --
  INSERT
-   INTO GDB2PR.TFI259_OPE_FUT_IND SELECT
-           FH_ACTUAL,
-           NO_REG,
-           NU_CTO,
-           NU_SCTO,
-           NU_CTOINTER,
-           FH_OPERBUR,
-           FH_LIQUID,
-           SUBSTR(NU_CTOINTER, 1, 3),
-           TX_OPERNSF,
-           TX_PIZARRA,
-           TX_SERIE,
-           0,
-           DE_TITULOS,
-           DE_PRECIO,
-           DE_MONTO,
-           NULL,
-           NULL,
-           NULL,
-           NULL,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) 
-                  IN (903, 919)
-                  OR TX_OPERNSF IN('DE', 'RE') 
-               THEN 0
-               ELSE 1
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           CASE
-               WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
-               ELSE 0
-           END,
-           NU_TIPONEG,
-           NULL
-       FROM            SESSION.PROC_NOCT
-       WHERE            FH_OPERBUR < FH_LIQUID
-           AND TX_OPERNSF IN(
-               'CD',
-               'VD',
-               'RE',
-               'DE'
-           );--
+    INTO GDB2PR.TFI259_OPE_FUT_IND SELECT
+                                      FH_ACTUAL,
+                                      NO_REG,
+                                      NU_CTO,
+                                      NU_SCTO,
+                                      NU_CTOINTER,
+                                      FH_OPERBUR,
+                                      FH_LIQUID,
+                                      SUBSTR(NU_CTOINTER, 1, 3),
+                                      TX_OPERNSF,
+                                      TX_PIZARRA,
+                                      TX_SERIE,
+                                      0,
+                                      DE_TITULOS,
+                                      DE_PRECIO,
+                                      DE_MONTO,
+                                      NULL,
+                                      NULL,
+                                      NULL,
+                                      NULL,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) 
+                                            IN (903, 919)
+                                            OR TX_OPERNSF IN('DE', 'RE') 
+                                         THEN 0
+                                         ELSE 1
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      CASE
+                                         WHEN SUBSTR(NU_CTOINTER, 1, 3) IN (903) THEN NULL
+                                         ELSE 0
+                                      END,
+                                      NU_TIPONEG,
+                                      NULL
+                                      FROM            SESSION.PROC_NOCT
+                                      WHERE            FH_OPERBUR < FH_LIQUID
+                                      AND TX_OPERNSF IN(
+                                         'CD',
+                                         'VD',
+                                         'RE',
+                                         'DE'
+                                      );--
 
 
 --
@@ -1450,84 +1450,84 @@ END IF;--
 
 --
  --
- SELECT
-   NO_REG,
-   NU_FOLIO,
-   TX_OPERNSF,
-   NU_CTO,
-   NU_SCTO,
-   NU_CTOINTER,
-   NU_INTERMED,
-   NU_TPMERCA,
-   NU_INSTRUMENT,
-   NU_SECEMIS,
-   TX_PIZARRA,
-   TX_SERIE,
-   DE_TITULOS,
-   DE_PRECIO,
-   DE_IMPORTEC,
-   TX_TP_ADMON,
-   NU_CLASIF,
-   NU_TIPONEG,
-   NU_ABI_CERR,
-   NU_NIVEL1,
-   FH_OPERBUR,
-   FH_LIQUID,
-   DE_IMPUESTO,
-   TX_TIPODERECH,
-   NU_CUSTODIO,
-   TX_FORMANEG,
-   TX_PAPEL,
-   NU_PREMIO,
-   DE_PCPACTAD,
-   NU_PLAZO,
-   DE_IMP_COMI,
-   DE_IMIVACOM,
-   FH_VENCIM,
-   NU_CVEOPERA,
-   DE_INTERES,
-   DE_MONTO,
-   FH_ACTUAL,
-   TX_ERROR INTO        VI_NOREG,
-       VI_FOLIO,
-       VS_OPERNSF,
-       VI_CTO,
-       VI_SCTO,
-       VI_CTOINTER,
-       VI_INTERMED,
-       VI_MERCADO,
-       VI_INSTRUME,
-       VI_SECEMIS,
-       VS_PIZARRA,
-       VS_SERIE,
-       VI_TITULOS,
-       VI_PRECIO,
-       VI_IMPORTEC,
-       VS_ADMONPROP,
-       VI_CLASIF,
-       VI_TIPONEG,
-       VI_ABI_CERR,
-       VI_NIVEL1,
-       VF_OPERBUR,
-       VF_LIQUID,
-       VI_IMPUESTO,
-       VS_TIPODERECH,
-       VI_CUSTODIO,
-       VS_FORMANEG,
-       VS_PAPEL,
-       VI_PREMIO,
-       VI_PCPACTAD,
-       VI_PLAZO,
-       VI_IMP_COMI,
-       VI_IMIVACOM,
-       VF_VENCIMIENTO,
-       VI_CVEOPERA,
-       VI_INTERES,
-       VI_MONTO,
-       VF_UPOACTUAL,
-       VS_ERROR
-   FROM        SESSION.PROC_NOCT
-   WHERE        NU_SEC = VI_REG;--
+  SELECT
+    NO_REG,
+    NU_FOLIO,
+    TX_OPERNSF,
+    NU_CTO,
+    NU_SCTO,
+    NU_CTOINTER,
+    NU_INTERMED,
+    NU_TPMERCA,
+    NU_INSTRUMENT,
+    NU_SECEMIS,
+    TX_PIZARRA,
+    TX_SERIE,
+    DE_TITULOS,
+    DE_PRECIO,
+    DE_IMPORTEC,
+    TX_TP_ADMON,
+    NU_CLASIF,
+    NU_TIPONEG,
+    NU_ABI_CERR,
+    NU_NIVEL1,
+    FH_OPERBUR,
+    FH_LIQUID,
+    DE_IMPUESTO,
+    TX_TIPODERECH,
+    NU_CUSTODIO,
+    TX_FORMANEG,
+    TX_PAPEL,
+    NU_PREMIO,
+    DE_PCPACTAD,
+    NU_PLAZO,
+    DE_IMP_COMI,
+    DE_IMIVACOM,
+    FH_VENCIM,
+    NU_CVEOPERA,
+    DE_INTERES,
+    DE_MONTO,
+    FH_ACTUAL,
+    TX_ERROR INTO VI_NOREG,
+    VI_FOLIO,
+    VS_OPERNSF,
+    VI_CTO,
+    VI_SCTO,
+    VI_CTOINTER,
+    VI_INTERMED,
+    VI_MERCADO,
+    VI_INSTRUME,
+    VI_SECEMIS,
+    VS_PIZARRA,
+    VS_SERIE,
+    VI_TITULOS,
+    VI_PRECIO,
+    VI_IMPORTEC,
+    VS_ADMONPROP,
+    VI_CLASIF,
+    VI_TIPONEG,
+    VI_ABI_CERR,
+    VI_NIVEL1,
+    VF_OPERBUR,
+    VF_LIQUID,
+    VI_IMPUESTO,
+    VS_TIPODERECH,
+    VI_CUSTODIO,
+    VS_FORMANEG,
+    VS_PAPEL,
+    VI_PREMIO,
+    VI_PCPACTAD,
+    VI_PLAZO,
+    VI_IMP_COMI,
+    VI_IMIVACOM,
+    VF_VENCIMIENTO,
+    VI_CVEOPERA,
+    VI_INTERES,
+    VI_MONTO,
+    VF_UPOACTUAL,
+    VS_ERROR
+  FROM SESSION.PROC_NOCT
+  WHERE NU_SEC = VI_REG;--
 
 
 --
@@ -2099,10 +2099,10 @@ SET VI_VTA_ISR = 0;--
  --SI LA OPERACION PROCESADA ES FUTURA, SE LLAMA AL SP P SP_GEN_CLASES_CONT CON FH_OPERACION
  --
  IF (VF_OPERBUR < VF_LIQUID 
- AND VS_OPERNSF IN('CD',
-               'VD',
-               'RE',
-               'DE'))
+      AND VS_OPERNSF IN('CD',
+                        'VD',
+                        'RE',
+                        'DE'))
 OR VS_OPERNSF = 'CR'
  THEN CALL DBSBFI.SP_GEN_CLASES_CONT(
    VI_CTO,
